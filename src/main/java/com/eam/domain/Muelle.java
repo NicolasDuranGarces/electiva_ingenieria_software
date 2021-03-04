@@ -1,8 +1,11 @@
 package com.eam.domain;
 
+import lombok.Data;
+
+@Data
 public class Muelle {
 
-    String nombre;
+    int nombre;
     String tipoMuelle;
     boolean ocupado;
 
@@ -14,21 +17,20 @@ public class Muelle {
 
     }
 
-    public Muelle(String nombre, String tipoMuelle, boolean ocupado) {
+    public Muelle() {
+    }
+
+    public Muelle(int nombre, String tipoMuelle, boolean ocupado) {
         this.nombre = nombre;
         this.tipoMuelle = tipoMuelle;
         this.ocupado = ocupado;
     }
 
-    public Muelle() {
-
-    }
-
-    public String getNombre() {
+    public int getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(int nombre) {
         this.nombre = nombre;
     }
 
@@ -46,5 +48,6 @@ public class Muelle {
 
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
-    }    
+    }
+
 }

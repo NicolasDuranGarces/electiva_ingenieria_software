@@ -1,23 +1,23 @@
 package com.eam.domain;
-
 import java.util.ArrayList;
+import java.util.Map;
 
+import lombok.Data;
 
+@Data
 public class Bodega {
 
     String nombre;
-    String direccion;
-    ArrayList<Muelle> listaMuelles;
-    Ciudad ciudad;
-
-    public Bodega(String nombre, String direccion, ArrayList<Muelle> listaMuelles, Ciudad ciudad) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.listaMuelles = listaMuelles;
-        this.ciudad = ciudad;
-    }
+    Map<String,ArrayList<Muelle>> muelles;
+    String ciudad;
 
     public Bodega() {
+    }
+
+    public Bodega(String nombre, Map<String, ArrayList<Muelle>> muelles, String ciudad) {
+        this.nombre = nombre;
+        this.muelles = muelles;
+        this.ciudad = ciudad;
     }
 
     public String getNombre() {
@@ -28,29 +28,22 @@ public class Bodega {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public Map<String, ArrayList<Muelle>> getMuelles() {
+        return muelles;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setMuelles(Map<String, ArrayList<Muelle>> muelles) {
+        this.muelles = muelles;
     }
 
-    public ArrayList<Muelle> getListaMuelles() {
-        return listaMuelles;
-    }
-
-    public void setListaMuelles(ArrayList<Muelle> listaMuelles) {
-        this.listaMuelles = listaMuelles;
-    }
-
-    public Ciudad getCiudad() {
+    public String getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(Ciudad ciudad) {
+    public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-
+    
+    
     
 }
